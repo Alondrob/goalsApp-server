@@ -3,15 +3,20 @@ const getGoals = (req, res) => {
 }
 
 const setGoal = (req, res) => {
-    res.status(200).json({message: 'Get goals'})
+    if (!req.body.text) {
+        res.status(400)
+        throw new Error('Please add a text field')
+    }
+    res.status(200).json({message: 'Set goal'})
 }
 
 const updateGoal = (req, res) => {
-    res.status(200).json({message: 'Get goals'})
+    console.log('request object', req)
+    res.status(200).json({message: `Update goal ${req.params.id}`})
 }
 
 const deleteGoal = (req, res) => {
-    res.status(200).json({message: 'Get goals'})
+    res.status(200).json({message: 'Delete goals'})
 }
 
 
