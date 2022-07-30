@@ -4,6 +4,7 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
+// console.log(app)
 app.use('/api/goals', require('./routes/goalRoutes'))
 
 
